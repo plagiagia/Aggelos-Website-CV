@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Placeholder artwork">
+  <rect width="1200" height="900" fill="#eef2f9" />
+  <rect x="80" y="80" width="1040" height="740" rx="32" fill="#d4deed" />
+  <text x="50%" y="45%" fill="#0f4c81" font-family="'Segoe UI', Arial, sans-serif" font-size="48" text-anchor="middle" letter-spacing="4">AGGELOS GIANNOULIS</text>
+  <text x="50%" y="58%" fill="#5b6b7d" font-family="'Segoe UI', Arial, sans-serif" font-size="32" text-anchor="middle">Artwork Preview</text>
+</svg>
