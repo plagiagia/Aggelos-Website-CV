@@ -17,9 +17,10 @@ export default function Home() {
       <section className="container pt-16 md:pt-24 pb-20 md:pb-32">
         <div className="max-w-3xl">
           <p className="label mb-4">{t('home.subtitle', language)}</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4">
             Aggelos Giannoulis
           </h1>
+          <p className="text-xl md:text-2xl text-muted mb-6">Άγγελος Γιαννούλης</p>
           <p className="text-lg md:text-xl text-muted max-w-2xl">
             {t('home.tagline', language)}
           </p>
@@ -93,12 +94,12 @@ export default function Home() {
               </p>
             </div>
             <div className="md:text-right">
-              <a
-                href="mailto:aggelos@example.com"
-                className="inline-block text-lg hover:opacity-70 transition-opacity"
+              <Link
+                href="/contact"
+                className="inline-block border border-foreground px-6 py-3 text-sm hover:bg-foreground hover:text-background transition-colors"
               >
-                aggelos@example.com
-              </a>
+                {language === 'en' ? 'Get in Touch' : 'Kontakt aufnehmen'} →
+              </Link>
             </div>
           </div>
         </div>

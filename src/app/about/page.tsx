@@ -6,99 +6,132 @@ import { t } from '@/lib/i18n';
 const cvData = {
   education: [
     {
-      year: '2019 – 2023',
+      year: '2019 – 2025',
       title: {
-        en: 'Bachelor of Fine Arts, School of Fine Arts, Aristotle University of Thessaloniki (AUTH), GR',
-        de: 'Bachelor of Fine Arts, School of Fine Arts, Aristoteles-Universität Thessaloniki (AUTH), GR'
-      }
-    },
-    {
-      year: '2022',
-      title: {
-        en: 'Erasmus+ exchange semester, Universität der Künste Berlin (UdK), DE – studio practice in painting & illustration',
-        de: 'Erasmus+-Austauschsemester, Universität der Künste Berlin (UdK), DE – Atelierpraxis Malerei & Illustration'
-      }
-    }
-  ],
-  exhibitions: [
-    {
-      year: '2024',
-      title: {
-        en: 'Berlin Diaries – Group exhibition, Studio 45, Berlin, DE',
-        de: 'Berlin Diaries – Gruppenausstellung, Studio 45, Berlin, DE'
-      }
-    },
-    {
-      year: '2023',
-      title: {
-        en: 'AUTH Graduate Show 2023 – Department of Fine Arts, Thessaloniki, GR',
-        de: 'AUTH Graduate Show 2023 – Fachbereich Bildende Kunst, Thessaloniki, GR'
-      }
-    },
-    {
-      year: '2022',
-      title: {
-        en: 'In-Between/Transit – Student showcase, UdK Berlin, DE',
-        de: 'In-Between/Transit – Studierendenpräsentation, UdK Berlin, DE'
+        en: 'Integrated Master of Fine Arts (M.F.A.) — Painting',
+        de: 'Integrierter Master of Fine Arts (M.F.A.) — Malerei'
+      },
+      institution: {
+        en: 'Aristotle University of Thessaloniki (A.U.Th.) | School of Fine & Applied Arts',
+        de: 'Aristoteles-Universität Thessaloniki (A.U.Th.) | Fakultät für Bildende und Angewandte Kunst'
+      },
+      details: {
+        en: '300 ECTS credits across 10 semesters | Final grade: 9.37/10 (Excellent) | Thesis: 9.85/10',
+        de: '300 ECTS-Credits über 10 Semester | Abschlussnote: 9,37/10 (Ausgezeichnet) | Thesis: 9,85/10'
       }
     }
   ],
-  experience: [
+  coursework: [
     {
-      year: '2024 – present',
-      title: {
-        en: 'Freelance illustrator & visual artist, Berlin – commissions for editorial clients and cultural organisations',
-        de: 'Freiberuflicher Illustrator & Künstler, Berlin – Aufträge für Editorial-Kunden und Kulturinstitutionen'
+      category: { en: 'Studio Practice', de: 'Atelierpraxis' },
+      items: {
+        en: 'Advanced Painting I–VIII, Drawing I–II, Sculptural Elements, Introduction to New Media in Fine Arts I–II, Printmaking Techniques',
+        de: 'Fortgeschrittene Malerei I–VIII, Zeichnung I–II, Skulpturale Elemente, Einführung in Neue Medien in der Bildenden Kunst I–II, Drucktechniken'
       }
     },
     {
-      year: '2023',
-      title: {
-        en: 'Gallery assistant (intern), Contemporary Art Center of Thessaloniki – installation support, visitor engagement, documentation',
-        de: 'Galerieassistent (Praktikum), Contemporary Art Center of Thessaloniki – Aufbau, Besucherbetreuung, Dokumentation'
+      category: { en: 'Theory & History', de: 'Theorie & Geschichte' },
+      items: {
+        en: 'History of Art I–IV, Aesthetics I–II, Contemporary Art Discourse, Critical Theory',
+        de: 'Kunstgeschichte I–IV, Ästhetik I–II, Zeitgenössischer Kunstdiskurs, Kritische Theorie'
       }
     },
     {
-      year: '2021 – 2022',
-      title: {
-        en: 'Teaching assistant, Drawing & Colour studio, AUTH – supported first-year workshops and critiques',
-        de: 'Tutor im Zeichen- & Farbstudio, AUTH – Betreuung von Erstsemester-Workshops und Kritiken'
+      category: { en: 'Pedagogy', de: 'Pädagogik' },
+      items: {
+        en: 'Teaching Approach of Art I–II (including supervised classroom practicum), Lesson Planning & Curriculum Development',
+        de: 'Kunstvermittlung I–II (inkl. betreutes Unterrichtspraktikum), Unterrichtsplanung & Curriculum-Entwicklung'
+      }
+    },
+    {
+      category: { en: 'Professional Development', de: 'Berufliche Weiterbildung' },
+      items: {
+        en: 'English Terminology in Fine Arts I–IV (specialized vocabulary for international art contexts)',
+        de: 'Englische Fachterminologie in der Bildenden Kunst I–IV (Fachwortschatz für internationale Kunstkontexte)'
       }
     }
   ],
-  skills: [
+  academicProjects: [
     {
-      en: 'Painting (oil, acrylic, gouache); mixed media collage; life drawing; mural execution',
-      de: 'Malerei (Öl, Acryl, Gouache); Mixed-Media-Collage; Aktzeichnen; Wandbild-Ausführung'
+      title: { en: "Master's Thesis (Painting) — Grade: 9.85/10", de: 'Masterarbeit (Malerei) — Note: 9,85/10' },
+      description: {
+        en: 'Conducted research-led studio investigation culminating in cohesive body of original work. Demonstrated advanced technical proficiency in painting while engaging with contemporary theoretical frameworks. Presented thesis work through comprehensive written documentation and professional exhibition-style presentation, receiving distinction-level evaluation from faculty committee.',
+        de: 'Durchführung einer forschungsgeleiteten Atelieruntersuchung, die in einem zusammenhängenden Werk origineller Arbeiten gipfelte. Nachweis fortgeschrittener technischer Fähigkeiten in der Malerei bei gleichzeitiger Auseinandersetzung mit zeitgenössischen theoretischen Rahmenwerken. Präsentation der Abschlussarbeit durch umfassende schriftliche Dokumentation und professionelle Ausstellungspräsentation, mit Bewertung auf Auszeichnungsniveau durch die Fakultätskommission.'
+      }
     },
     {
-      en: 'Digital illustration (Procreate, Adobe Photoshop & Fresco); vector graphics (Illustrator)',
-      de: 'Digitale Illustration (Procreate, Adobe Photoshop & Fresco); Vektorgrafik (Illustrator)'
+      title: { en: 'Advanced Painting Studios (VII–VIII)', de: 'Fortgeschrittene Malereistudios (VII–VIII)' },
+      description: {
+        en: 'Developed mature studio practice through sustained investigation of conceptual and material concerns. Participated in intensive peer critique sessions and iterative refinement processes. Successfully presented resolved work in professional exhibition format, demonstrating ability to communicate artistic intent and respond to critical feedback.',
+        de: 'Entwicklung einer ausgereiften Atelierpraxis durch anhaltende Untersuchung konzeptueller und materieller Fragestellungen. Teilnahme an intensiven Peer-Kritik-Sitzungen und iterativen Verfeinerungsprozessen. Erfolgreiche Präsentation abgeschlossener Arbeiten im professionellen Ausstellungsformat mit der Fähigkeit, künstlerische Absichten zu kommunizieren und auf kritisches Feedback zu reagieren.'
+      }
     },
     {
-      en: 'Photography & documentation for artworks; basic video editing (Premiere Pro)',
-      de: 'Fotografie & Dokumentation von Kunstwerken; grundlegender Videoschnitt (Premiere Pro)'
+      title: { en: 'New Media Fundamentals', de: 'Grundlagen Neuer Medien' },
+      description: {
+        en: 'Explored interdisciplinary approaches at the intersection of traditional painting practice and digital/new media technologies. Investigated hybrid methodologies integrating analog and digital processes, expanding conceptual and technical toolkit for contemporary art production.',
+        de: 'Erkundung interdisziplinärer Ansätze an der Schnittstelle von traditioneller Malerei und digitalen/neuen Medientechnologien. Untersuchung hybrider Methoden zur Integration analoger und digitaler Prozesse, Erweiterung des konzeptuellen und technischen Werkzeugkastens für zeitgenössische Kunstproduktion.'
+      }
+    },
+    {
+      title: { en: 'Art Education & Pedagogy', de: 'Kunsterziehung & Pädagogik' },
+      description: {
+        en: 'Completed comprehensive training in art education methodology, including curriculum design, lesson planning, and classroom management. Executed supervised teaching practicum, developing and delivering age-appropriate art lessons that fostered creative expression and technical skill development in students.',
+        de: 'Absolvierung einer umfassenden Ausbildung in Kunstpädagogik, einschließlich Curriculum-Design, Unterrichtsplanung und Klassenführung. Durchführung eines betreuten Unterrichtspraktikums, Entwicklung und Durchführung altersgerechter Kunstunterrichtseinheiten zur Förderung kreativen Ausdrucks und technischer Fertigkeiten bei Schülern.'
+      }
     }
   ],
+  skills: {
+    artistic: {
+      title: { en: 'Artistic & Technical Skills', de: 'Künstlerische & Technische Fähigkeiten' },
+      items: {
+        en: 'Painting (oil, acrylic, mixed media) • Drawing & sketching • Color theory & application • Compositional design • Printmaking techniques • New media integration • Exhibition installation & artwork handling • Studio management • Art historical research • Critical analysis & aesthetics',
+        de: 'Malerei (Öl, Acryl, Mixed Media) • Zeichnung & Skizzieren • Farbtheorie & -anwendung • Kompositionsdesign • Drucktechniken • Integration neuer Medien • Ausstellungsinstallation & Kunstwerkhandhabung • Ateliermanagement • Kunsthistorische Forschung • Kritische Analyse & Ästhetik'
+      }
+    },
+    digital: {
+      title: { en: 'Digital & Technical Proficiency', de: 'Digitale & Technische Kompetenz' },
+      items: {
+        en: 'Adobe Creative Suite (Photoshop, Illustrator, Lightroom) • Procreate (digital illustration) • Digital photography (DSLR) • Image scanning & archiving • Portfolio documentation',
+        de: 'Adobe Creative Suite (Photoshop, Illustrator, Lightroom) • Procreate (digitale Illustration) • Digitalfotografie (DSLR) • Bildscanning & Archivierung • Portfolio-Dokumentation'
+      }
+    },
+    professional: {
+      title: { en: 'Professional Attributes', de: 'Berufliche Eigenschaften' },
+      items: {
+        en: 'Collaborative teamwork • Receptiveness to critique • Self-directed learning • Time management • Project planning & execution • Adaptability • Strong work ethic • Professional communication',
+        de: 'Teamarbeit • Offenheit für Kritik • Selbstgesteuertes Lernen • Zeitmanagement • Projektplanung & -durchführung • Anpassungsfähigkeit • Starke Arbeitsmoral • Professionelle Kommunikation'
+      }
+    }
+  },
   languages: [
-    { en: 'Greek – native', de: 'Griechisch – Muttersprache' },
-    { en: 'English – fluent', de: 'Englisch – fließend' },
-    { en: 'German – basic conversational (A2 progressing)', de: 'Deutsch – Grundkenntnisse (A2 in Fortschritt)' }
-  ]
+    {
+      lang: { en: 'Greek', de: 'Griechisch' },
+      level: { en: 'Native', de: 'Muttersprache' }
+    },
+    {
+      lang: { en: 'English', de: 'Englisch' },
+      level: { en: 'Advanced — including specialized art terminology for international contexts', de: 'Fortgeschritten — einschließlich spezialisierter Kunstterminologie für internationale Kontexte' }
+    }
+  ],
+  qualifications: {
+    en: "Integrated Master's degree confers eligibility for professional registration with the Hellenic Chamber of Visual Arts (EETE)",
+    de: 'Der integrierte Masterabschluss berechtigt zur Berufsregistrierung bei der Griechischen Kammer der Bildenden Kunst (EETE)'
+  }
 };
 
 const artistStatement = {
   en: [
-    "My work is driven by an urge to tell stories through images. Growing up in Thessaloniki's rich historical environment, I developed a fascination with how memory and place intertwine. In my paintings and illustrations, vibrant colors and textured layers depict the overlap of personal and collective history. I often use oil paint for its depth and tradition, layering it with modern materials – from printed photographs to digital collage – to create a conversation between past and present.",
-    "A recurring theme in my art is the concept of transition and belonging. Having relocated from Greece to Germany, I reflect on the feeling of being \"in-between\" cultures. This experience surfaces as fragmented cityscapes, hybrid figures, and mythical symbols hidden in my compositions, inviting viewers to find their own narrative in the pieces.",
-    "Process is important to me: my canvases usually begin with quick plein-air sketches or even spontaneous street photography, which I then deconstruct in the studio. Mistakes and chance occurrences (like a drip of paint or a torn paper piece) are embraced as integral parts of the final work, echoing the unpredictability of urban life.",
-    "Ultimately, I aim for my art to spark dialogue – be it an internal dialogue within the viewer or a conversation across cultures. Art, for me, is a bridge: between my Greek roots and my new Berlin context, between classical fine art techniques and contemporary design, and most of all, between people."
+    "My artistic practice is grounded in rigorous academic training and a deep commitment to the tradition of painting. Through my studies at the Aristotle University of Thessaloniki, I have developed a comprehensive understanding of both classical techniques and contemporary approaches, enabling me to engage with painting as both a historical discipline and a living, evolving medium.",
+    "Central to my work is the exploration of visual language through color, composition, and material. I approach each painting as an investigation—testing the boundaries of traditional methods while remaining open to the possibilities offered by new media and interdisciplinary practices. This balance between foundation and experimentation defines my studio work.",
+    "My pedagogical training has profoundly shaped how I think about art-making. Teaching requires clarity of thought and the ability to articulate complex ideas, skills I now apply to my own practice. I believe that art has the power to communicate across boundaries, and I am committed to creating work that invites dialogue and reflection.",
+    "Looking forward, I am dedicated to continuous artistic development and professional excellence. I seek opportunities to contribute to the visual arts community through studio practice, exhibition, collaboration, and education."
   ],
   de: [
-    "Mein Schaffen wird von dem Wunsch angetrieben, Geschichten durch Bilder zu erzählen. Aufgewachsen in der geschichtsträchtigen Umgebung Thessalonikis entwickelte ich eine Faszination dafür, wie Erinnerung und Orte miteinander verwoben sind. In meinen Gemälden und Illustrationen zeigen leuchtende Farben und strukturierte Schichten das Überlappen von persönlicher und kollektiver Geschichte. Ich verwende oft Ölfarbe wegen ihrer Tiefe und Tradition und kombiniere sie mit modernen Materialien – von gedruckten Fotografien bis zu digitalen Collagen – um einen Dialog zwischen Vergangenheit und Gegenwart zu erschaffen.",
-    "Ein wiederkehrendes Thema in meiner Kunst ist der Übergang und die Zugehörigkeit. Nach meinem Umzug von Griechenland nach Deutschland reflektiere ich das Gefühl, 'zwischen' Kulturen zu stehen. Diese Erfahrung zeigt sich in fragmentierten Stadtlandschaften, hybriden Figuren und mythischen Symbolen, die in meinen Kompositionen verborgen sind und den Betrachter einladen, eine eigene Erzählung in den Werken zu finden.",
-    "Der Prozess ist mir wichtig: Meine Leinwände beginnen meist mit schnellen Freilandskizzen oder spontanen Straßenfotografien, die ich dann im Studio dekonstruiere. Fehler und Zufälle (wie ein verlaufener Farbtropfen oder ein zerrissenes Papierstück) begreife ich als integralen Bestandteil des Endergebnisses – sie spiegeln die Unvorhersehbarkeit des urbanen Lebens wider.",
-    "Letztendlich möchte ich, dass meine Kunst Dialoge anregt – sei es ein innerer Dialog beim Betrachter oder ein Gespräch über kulturelle Grenzen hinweg. Kunst ist für mich eine Brücke: zwischen meinen griechischen Wurzeln und meinem neuen Kontext in Berlin, zwischen klassischer bildender Kunst und modernem Design – und vor allem zwischen Menschen."
+    "Meine künstlerische Praxis basiert auf einer fundierten akademischen Ausbildung und einem tiefen Engagement für die Tradition der Malerei. Durch mein Studium an der Aristoteles-Universität Thessaloniki habe ich ein umfassendes Verständnis sowohl klassischer Techniken als auch zeitgenössischer Ansätze entwickelt, das es mir ermöglicht, mich mit der Malerei als historischer Disziplin und als lebendigem, sich entwickelndem Medium auseinanderzusetzen.",
+    "Im Zentrum meiner Arbeit steht die Erforschung visueller Sprache durch Farbe, Komposition und Material. Ich betrachte jedes Gemälde als eine Untersuchung – die Grenzen traditioneller Methoden austestend, während ich offen bleibe für die Möglichkeiten, die neue Medien und interdisziplinäre Praktiken bieten. Diese Balance zwischen Fundament und Experiment definiert meine Atelierarbeit.",
+    "Meine pädagogische Ausbildung hat tiefgreifend beeinflusst, wie ich über das Kunstschaffen nachdenke. Lehren erfordert Klarheit des Denkens und die Fähigkeit, komplexe Ideen zu artikulieren – Fähigkeiten, die ich nun in meiner eigenen Praxis anwende. Ich glaube, dass Kunst die Kraft hat, über Grenzen hinweg zu kommunizieren, und ich bin entschlossen, Werke zu schaffen, die zum Dialog und zur Reflexion einladen.",
+    "Mit Blick auf die Zukunft widme ich mich der kontinuierlichen künstlerischen Entwicklung und professionellen Exzellenz. Ich suche nach Möglichkeiten, zur Gemeinschaft der bildenden Kunst beizutragen – durch Atelierpraxis, Ausstellung, Zusammenarbeit und Bildung."
   ]
 };
 
@@ -131,70 +164,80 @@ export default function AboutPage() {
       <section>
         <h2 className="text-2xl md:text-3xl mb-12">{t('about.cvTitle', language)}</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left Column */}
-          <div className="space-y-12">
-            {/* Education */}
-            <div>
-              <h3 className="label mb-4">{t('about.education', language)}</h3>
-              <div className="space-y-4">
-                {cvData.education.map((item, index) => (
-                  <div key={index}>
-                    <p className="text-sm text-muted mb-1">{item.year}</p>
-                    <p className="text-sm">{item.title[language]}</p>
-                  </div>
-                ))}
-              </div>
+        {/* Education */}
+        <div className="mb-16">
+          <h3 className="label mb-6">{t('about.education', language)}</h3>
+          {cvData.education.map((item, index) => (
+            <div key={index} className="mb-6">
+              <p className="text-sm text-muted mb-1">{item.year} • Thessaloniki, Greece</p>
+              <p className="text-lg font-medium mb-1">{item.title[language]}</p>
+              <p className="text-sm text-muted mb-2">{item.institution[language]}</p>
+              <p className="text-sm font-medium">{item.details[language]}</p>
             </div>
+          ))}
 
-            {/* Exhibitions */}
-            <div>
-              <h3 className="label mb-4">{t('about.exhibitions', language)}</h3>
-              <div className="space-y-4">
-                {cvData.exhibitions.map((item, index) => (
-                  <div key={index}>
-                    <p className="text-sm text-muted mb-1">{item.year}</p>
-                    <p className="text-sm">{item.title[language]}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Experience */}
-            <div>
-              <h3 className="label mb-4">{t('about.experience', language)}</h3>
-              <div className="space-y-4">
-                {cvData.experience.map((item, index) => (
-                  <div key={index}>
-                    <p className="text-sm text-muted mb-1">{item.year}</p>
-                    <p className="text-sm">{item.title[language]}</p>
-                  </div>
-                ))}
-              </div>
+          {/* Key Coursework */}
+          <div className="mt-8 pl-4 border-l-2 border-border">
+            <p className="label mb-4">{language === 'en' ? 'Key Coursework & Competencies' : 'Schlüsselkurse & Kompetenzen'}</p>
+            <div className="space-y-3">
+              {cvData.coursework.map((course, index) => (
+                <div key={index}>
+                  <p className="text-sm font-medium">{course.category[language]}</p>
+                  <p className="text-sm text-muted">{course.items[language]}</p>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Right Column */}
-          <div className="space-y-12">
-            {/* Skills */}
-            <div>
-              <h3 className="label mb-4">{t('about.skills', language)}</h3>
-              <div className="space-y-3">
-                {cvData.skills.map((item, index) => (
-                  <p key={index} className="text-sm">{item[language]}</p>
-                ))}
+        {/* Academic Projects */}
+        <div className="mb-16">
+          <h3 className="label mb-6">{t('about.academicProjects', language)}</h3>
+          <div className="space-y-8">
+            {cvData.academicProjects.map((project, index) => (
+              <div key={index}>
+                <p className="text-sm font-medium mb-2">{project.title[language]}</p>
+                <p className="text-sm text-muted">{project.description[language]}</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            {/* Languages */}
+        {/* Core Competencies */}
+        <div className="mb-16">
+          <h3 className="label mb-6">{t('about.competencies', language)}</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div>
-              <h3 className="label mb-4">{t('about.languages', language)}</h3>
-              <div className="space-y-2">
-                {cvData.languages.map((item, index) => (
-                  <p key={index} className="text-sm">{item[language]}</p>
-                ))}
-              </div>
+              <p className="text-sm font-medium mb-2">{cvData.skills.artistic.title[language]}</p>
+              <p className="text-sm text-muted">{cvData.skills.artistic.items[language]}</p>
             </div>
+            <div>
+              <p className="text-sm font-medium mb-2">{cvData.skills.digital.title[language]}</p>
+              <p className="text-sm text-muted">{cvData.skills.digital.items[language]}</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium mb-2">{cvData.skills.professional.title[language]}</p>
+              <p className="text-sm text-muted">{cvData.skills.professional.items[language]}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Languages & Qualifications */}
+        <div>
+          <h3 className="label mb-6">{t('about.languages', language)}</h3>
+          <div className="space-y-3 mb-6">
+            {cvData.languages.map((item, index) => (
+              <p key={index} className="text-sm">
+                <span className="font-medium">{item.lang[language]}</span>
+                <span className="text-muted"> — {item.level[language]}</span>
+              </p>
+            ))}
+          </div>
+          <div className="mt-6 p-4 bg-gray-50 border border-border">
+            <p className="text-sm">
+              <span className="font-medium">{language === 'en' ? 'Professional Status: ' : 'Beruflicher Status: '}</span>
+              <span className="text-muted">{cvData.qualifications[language]}</span>
+            </p>
           </div>
         </div>
       </section>
