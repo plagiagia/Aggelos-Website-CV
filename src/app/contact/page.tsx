@@ -23,29 +23,23 @@ export default function ContactPage() {
           {/* Email */}
           <div>
             <p className="label mb-2">{t('contact.email', language)}</p>
-            <a
-              href="mailto:aggelos@example.com"
-              className="text-lg hover:opacity-70 transition-opacity"
-            >
-              aggelos@example.com
-            </a>
+            <p className="text-lg text-muted italic">
+              {language === 'en' ? '[Available upon request]' : '[Auf Anfrage verfügbar]'}
+            </p>
           </div>
 
           {/* Phone */}
           <div>
             <p className="label mb-2">{t('contact.phone', language)}</p>
-            <a
-              href="tel:+4915123456789"
-              className="text-lg hover:opacity-70 transition-opacity"
-            >
-              +49 151 23456789
-            </a>
+            <p className="text-lg text-muted italic">
+              {language === 'en' ? '[Available upon request]' : '[Auf Anfrage verfügbar]'}
+            </p>
           </div>
 
           {/* Location */}
           <div>
             <p className="label mb-2">{t('contact.location', language)}</p>
-            <p className="text-lg">Berlin, Germany</p>
+            <p className="text-lg">Thessaloniki, Greece</p>
           </div>
 
           {/* Social */}

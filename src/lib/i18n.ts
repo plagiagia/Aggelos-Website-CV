@@ -33,12 +33,12 @@ export const translations: Translations = {
 
   // Home
   'home.subtitle': {
-    en: 'Visual Artist',
-    de: 'Bildender Künstler'
+    en: 'Contemporary Visual Artist | Painting',
+    de: 'Zeitgenössischer Bildender Künstler | Malerei'
   },
   'home.tagline': {
-    en: 'Exploring memory, migration, and urban narratives through painting, illustration, and mixed media.',
-    de: 'Erforschung von Erinnerung, Migration und urbanen Narrativen durch Malerei, Illustration und Mixed Media.'
+    en: 'Specialized in contemporary painting practice with comprehensive foundation in drawing, color theory, composition, and emerging media.',
+    de: 'Spezialisiert auf zeitgenössische Malerei mit umfassender Grundlage in Zeichnung, Farbtheorie, Komposition und neuen Medien.'
   },
   'home.selectedWorks': {
     en: 'Selected Works',
@@ -49,8 +49,8 @@ export const translations: Translations = {
     de: 'Alle Werke ansehen'
   },
   'home.statement': {
-    en: 'My work is driven by an urge to tell stories through images. Growing up in Thessaloniki\'s rich historical environment, I developed a fascination with how memory and place intertwine.',
-    de: 'Mein Schaffen wird von dem Wunsch angetrieben, Geschichten durch Bilder zu erzählen. Aufgewachsen in der geschichtsträchtigen Umgebung Thessalonikis entwickelte ich eine Faszination dafür, wie Erinnerung und Orte miteinander verwoben sind.'
+    en: 'Accomplished visual artist with distinction-level Integrated Master\'s degree in Painting from Aristotle University of Thessaloniki. Committed to continuous artistic development and professional excellence within the visual arts sector.',
+    de: 'Ausgezeichneter bildender Künstler mit einem integrierten Masterstudium in Malerei mit Auszeichnung von der Aristoteles-Universität Thessaloniki. Engagiert für kontinuierliche künstlerische Entwicklung und professionelle Exzellenz im Bereich der bildenden Kunst.'
   },
   'home.readMore': {
     en: 'Read more',
@@ -119,8 +119,8 @@ export const translations: Translations = {
     de: 'Über mich'
   },
   'about.bio': {
-    en: 'Aggelos Giannoulis (b. 2000, Thessaloniki) is a visual artist specializing in painting and illustration. A recent BFA graduate of the School of Fine Arts, Thessaloniki, he has relocated to Berlin to immerse himself in its vibrant art scene.',
-    de: 'Aggelos Giannoulis (geb. 2000, Thessaloniki) ist ein bildender Künstler mit Schwerpunkt Malerei und Illustration. Vor Kurzem hat er sein Kunststudium an der School of Fine Arts in Thessaloniki abgeschlossen und ist nach Berlin übergesiedelt.'
+    en: 'Accomplished visual artist with distinction-level Integrated Master\'s degree (300 ECTS) in Painting from Aristotle University of Thessaloniki. Graduated with honors (9.37/10), achieving exceptional thesis recognition (9.85/10). Specialized in contemporary painting practice with comprehensive foundation in drawing, color theory, composition, and emerging media. Equipped with pedagogical training and practical teaching experience. Committed to continuous artistic development and professional excellence within the visual arts sector.',
+    de: 'Ausgezeichneter bildender Künstler mit integriertem Masterstudium (300 ECTS) in Malerei mit Auszeichnung von der Aristoteles-Universität Thessaloniki. Abschluss mit Auszeichnung (9,37/10), mit außergewöhnlicher Anerkennung der Abschlussarbeit (9,85/10). Spezialisiert auf zeitgenössische Malerei mit umfassender Grundlage in Zeichnung, Farbtheorie, Komposition und neuen Medien. Ausgestattet mit pädagogischer Ausbildung und praktischer Lehrerfahrung. Engagiert für kontinuierliche künstlerische Entwicklung und professionelle Exzellenz im Bereich der bildenden Kunst.'
   },
   'about.statementTitle': {
     en: 'Artist Statement',
@@ -147,8 +147,16 @@ export const translations: Translations = {
     de: 'Fähigkeiten & Tools'
   },
   'about.languages': {
-    en: 'Languages',
-    de: 'Sprachen'
+    en: 'Languages & Qualifications',
+    de: 'Sprachen & Qualifikationen'
+  },
+  'about.academicProjects': {
+    en: 'Academic Projects & Research',
+    de: 'Akademische Projekte & Forschung'
+  },
+  'about.competencies': {
+    en: 'Core Competencies',
+    de: 'Kernkompetenzen'
   },
 
   // Contact
@@ -179,8 +187,8 @@ export const translations: Translations = {
 
   // Footer
   'footer.tagline': {
-    en: 'Visual artist exploring memory, migration, and urban narratives in Berlin.',
-    de: 'Bildender Künstler, der in Berlin Erinnerungen, Migration und urbane Narrative erforscht.'
+    en: 'Contemporary Visual Artist | Painting — Thessaloniki, Greece',
+    de: 'Zeitgenössischer Bildender Künstler | Malerei — Thessaloniki, Griechenland'
   }
 };
 

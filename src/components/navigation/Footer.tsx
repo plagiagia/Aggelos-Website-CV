@@ -22,12 +22,7 @@ export default function Footer() {
           {/* Right column */}
           <div className="md:text-right">
             <div className="flex flex-col md:items-end gap-2 text-sm text-muted">
-              <a href="mailto:aggelos@example.com" className="hover:text-foreground transition-colors">
-                aggelos@example.com
-              </a>
-              <a href="tel:+4915123456789" className="hover:text-foreground transition-colors">
-                +49 151 23456789
-              </a>
+              <p>Thessaloniki, Greece</p>
               <div className="flex gap-4 mt-2">
                 <a
                   href="https://www.instagram.com"
