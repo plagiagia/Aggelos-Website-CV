@@ -6,36 +6,37 @@ import { LanguageProvider } from "@/lib/LanguageContext";
 
 export const metadata: Metadata = {
   title: {
-    default: "Aggelos Giannoulis – Visual Artist",
+    default: "Aggelos Giannoulis – Contemporary Visual Artist",
     template: "%s | Aggelos Giannoulis",
   },
   description:
-    "Portfolio of Aggelos Giannoulis, a Berlin-based visual artist exploring memory, migration, and urban narratives through painting, illustration, and mixed media.",
+    "Portfolio of Aggelos Giannoulis (Άγγελος Γιαννούλης), a contemporary visual artist specializing in painting. MFA graduate from Aristotle University of Thessaloniki with distinction.",
   keywords: [
     "visual artist",
     "painter",
-    "illustrator",
-    "Berlin",
     "contemporary art",
-    "mixed media",
+    "painting",
+    "Thessaloniki",
+    "Greece",
     "Aggelos Giannoulis",
+    "Άγγελος Γιαννούλης",
+    "fine arts",
   ],
   authors: [{ name: "Aggelos Giannoulis" }],
   creator: "Aggelos Giannoulis",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aggelosgiannoulis.com",
     siteName: "Aggelos Giannoulis",
-    title: "Aggelos Giannoulis – Visual Artist",
+    title: "Aggelos Giannoulis – Contemporary Visual Artist",
     description:
-      "Portfolio of Aggelos Giannoulis, a Berlin-based visual artist exploring memory, migration, and urban narratives.",
+      "Portfolio of Aggelos Giannoulis, a contemporary visual artist specializing in painting from Thessaloniki, Greece.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aggelos Giannoulis – Visual Artist",
+    title: "Aggelos Giannoulis – Contemporary Visual Artist",
     description:
-      "Portfolio of Aggelos Giannoulis, a Berlin-based visual artist.",
+      "Portfolio of Aggelos Giannoulis, a contemporary visual artist specializing in painting.",
   },
   robots: {
     index: true,
