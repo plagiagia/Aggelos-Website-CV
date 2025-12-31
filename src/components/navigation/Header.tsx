@@ -1,9 +1,9 @@
 'use client';
 
+import { useLanguage } from '@/lib/LanguageContext';
+import { languageNames, languages, t } from '@/lib/i18n';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useLanguage } from '@/lib/LanguageContext';
-import { t, languages, languageNames } from '@/lib/i18n';
 
 export default function Header() {
   const pathname = usePathname();
@@ -21,45 +21,45 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/40">
       <div className="container">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo / Name */}
           <Link
             href="/"
-            className="text-lg md:text-xl font-normal tracking-tight hover:opacity-100"
+            className="text-xl md:text-2xl font-serif tracking-tight hover:opacity-100 reveal"
           >
             Aggelos Giannoulis
           </Link>
 
           {/* Navigation */}
-          <nav className="flex items-center gap-6 md:gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm tracking-wide transition-opacity ${
-                  isActive(item.href)
-                    ? 'opacity-100'
-                    : 'opacity-60 hover:opacity-100'
-                }`}
-              >
-                {t(item.label, language)}
-              </Link>
-            ))}
+          <nav className="flex items-center gap-8 md:gap-12 reveal del-1">
+            <div className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-xs uppercase tracking-[0.2em] transition-all ${isActive(item.href)
+                    ? 'opacity-100 translate-y-[-1px]'
+                    : 'opacity-50 hover:opacity-100'
+                    }`}
+                >
+                  {t(item.label, language)}
+                </Link>
+              ))}
+            </div>
 
             {/* Language Toggle */}
-            <div className="flex items-center gap-1 ml-2 md:ml-4">
+            <div className="flex items-center gap-4 border-l border-border/60 pl-8">
               {languages.map((lang) => (
                 <button
                   key={lang}
                   onClick={() => setLanguage(lang)}
-                  className={`text-xs tracking-wider px-2 py-1 transition-opacity ${
-                    language === lang
-                      ? 'opacity-100 font-medium'
-                      : 'opacity-40 hover:opacity-70'
-                  }`}
-                  aria-label={`Switch to ${lang === 'en' ? 'English' : 'German'}`}
+                  className={`text-[10px] uppercase tracking-[0.15em] transition-all ${language === lang
+                    ? 'opacity-100 font-bold'
+                    : 'opacity-30 hover:opacity-60'
+                    }`}
+                  aria-label={`Switch to ${lang === 'en' ? 'English' : lang === 'el' ? 'Greek' : 'German'}`}
                 >
                   {languageNames[lang]}
                 </button>

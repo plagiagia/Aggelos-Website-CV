@@ -1,8 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/navigation/Header";
 import Footer from "@/components/navigation/Footer";
+import Header from "@/components/navigation/Header";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import type { Metadata } from "next";
+import { Instrument_Sans, Playfair_Display } from "next/font/google";
+import "./globals.css";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -50,11 +61,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className={`${playfair.variable} ${instrumentSans.variable}`}>
+      <body className="antialiased font-sans">
         <LanguageProvider>
           <Header />
-          <main className="pt-16 md:pt-20 min-h-screen">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </LanguageProvider>
       </body>
