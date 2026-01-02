@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# uploaded works (images)
+/public/uploads/
+
+# uploaded works metadata (uncomment if you don't want to track uploaded works)
+# /data/uploaded-works.json

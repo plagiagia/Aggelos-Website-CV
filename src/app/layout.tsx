@@ -64,8 +64,11 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${instrumentSans.variable}`}>
       <body className="antialiased font-sans">
         <LanguageProvider>
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main id="main-content" className="min-h-screen">{children}</main>
           <Footer />
         </LanguageProvider>
       </body>

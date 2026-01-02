@@ -1,20 +1,18 @@
-export type Language = 'en' | 'de' | 'el';
+export type Language = 'en' | 'de';
 
 export const defaultLanguage: Language = 'en';
 
-export const languages: Language[] = ['en', 'de', 'el'];
+export const languages: Language[] = ['en', 'de'];
 
 export const languageNames: Record<Language, string> = {
   en: 'EN',
-  de: 'DE',
-  el: 'EL'
+  de: 'DE'
 };
 
 export interface Translations {
   [key: string]: {
     en: string;
     de: string;
-    el: string;
   };
 }
 
@@ -22,215 +20,175 @@ export const translations: Translations = {
   // Navigation
   'nav.works': {
     en: 'Works',
-    de: 'Werke',
-    el: 'Έργα'
+    de: 'Werke'
   },
   'nav.about': {
     en: 'About',
-    de: 'Über',
-    el: 'Σχετικά'
+    de: 'Über'
   },
   'nav.contact': {
     en: 'Contact',
-    de: 'Kontakt',
-    el: 'Επικοινωνία'
+    de: 'Kontakt'
   },
 
   // Home
   'home.subtitle': {
     en: 'Contemporary Visual Artist | Painting',
-    de: 'Zeitgenössischer Bildender Künstler | Malerei',
-    el: 'Σύγχρονος Εικαστικός Καλλιτέχνης | Ζωγραφική'
+    de: 'Zeitgenössischer Bildender Künstler | Malerei'
   },
   'home.tagline': {
     en: 'Specialized in contemporary painting practice with comprehensive foundation in drawing, color theory, composition, and emerging media.',
-    de: 'Spezialisiert auf zeitgenössische Malerei mit umfassender Grundlage in Zeichnung, Farbtheorie, Komposition und neuen Medien.',
-    el: 'Εξειδίκευση στη σύγχρονη ζωγραφική με ολοκληρωμένη βάση στο σχέδιο, τη θεωρία χρωμάτων, τη σύνθεση και τα νέα μέσα.'
+    de: 'Spezialisiert auf zeitgenössische Malerei mit umfassender Grundlage in Zeichnung, Farbtheorie, Komposition und neuen Medien.'
   },
   'home.selectedWorks': {
     en: 'Selected Works',
-    de: 'Ausgewählte Werke',
-    el: 'Επιλεγμένα Έργα'
+    de: 'Ausgewählte Werke'
   },
   'home.viewAll': {
     en: 'View all works',
-    de: 'Alle Werke ansehen',
-    el: 'Προβολή όλων των έργων'
+    de: 'Alle Werke ansehen'
   },
   'home.statement': {
     en: 'Accomplished visual artist with distinction-level Integrated Master\'s degree in Painting from Aristotle University of Thessaloniki. Committed to continuous artistic development and professional excellence within the visual arts sector.',
-    de: 'Ausgezeichneter bildender Künstler mit einem integrierten Masterstudium in Malerei mit Auszeichnung von der Aristoteles-Universität Thessaloniki. Engagiert für kontinuierliche künstlerische Entwicklung und professionelle Exzellenz im Bereich der bildenden Kunst.',
-    el: 'Καταξιωμένος εικαστικός καλλιτέχνης με Ενιαίο Μεταπτυχιακό Τίτλο (Integrated Master) στη Ζωγραφική από το Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης με βαθμό "Άριστα". Δεσμευμένος στη συνεχή καλλιτεχνική εξέλιξη και την επαγγελματική αριστεία στον τομέα των εικαστικών τεχνών.'
+    de: 'Ausgezeichneter bildender Künstler mit einem integrierten Masterstudium in Malerei mit Auszeichnung von der Aristoteles-Universität Thessaloniki. Engagiert für kontinuierliche künstlerische Entwicklung und professionelle Exzellenz im Bereich der bildenden Kunst.'
   },
   'home.readMore': {
     en: 'Read more',
-    de: 'Weiterlesen',
-    el: 'Διαβάστε περισσότερα'
+    de: 'Weiterlesen'
   },
 
   // Works
   'works.title': {
     en: 'Works',
-    de: 'Werke',
-    el: 'Έργα'
+    de: 'Werke'
   },
   'works.viewDetails': {
     en: 'View details',
-    de: 'Details ansehen',
-    el: 'Λεπτομέρειες'
+    de: 'Details ansehen'
   },
   'works.backToWorks': {
     en: 'Back to works',
-    de: 'Zurück zu den Werken',
-    el: 'Επιστροφή στα έργα'
+    de: 'Zurück zu den Werken'
   },
   'works.inquire': {
     en: 'Inquire about this work',
-    de: 'Werk anfragen',
-    el: 'Ενδιαφέρομαι για αυτό το έργο'
+    de: 'Werk anfragen'
   },
 
   // Metadata labels
   'meta.year': {
     en: 'Year',
-    de: 'Jahr',
-    el: 'Έτος'
+    de: 'Jahr'
   },
   'meta.medium': {
     en: 'Medium',
-    de: 'Medium',
-    el: 'Μέσο'
+    de: 'Medium'
   },
   'meta.dimensions': {
     en: 'Dimensions',
-    de: 'Maße',
-    el: 'Διαστάσεις'
+    de: 'Maße'
   },
   'meta.series': {
     en: 'Series',
-    de: 'Serie',
-    el: 'Σειρά'
+    de: 'Serie'
   },
   'meta.exhibition': {
     en: 'Exhibition',
-    de: 'Ausstellung',
-    el: 'Έκθεση'
+    de: 'Ausstellung'
   },
   'meta.availability': {
     en: 'Availability',
-    de: 'Verfügbarkeit',
-    el: 'Διαθεσιμότητα'
+    de: 'Verfügbarkeit'
   },
   'meta.status': {
     en: 'Status',
-    de: 'Status',
-    el: 'Κατάσταση'
+    de: 'Status'
   },
   'meta.notes': {
     en: 'Notes',
-    de: 'Notizen',
-    el: 'Σημειώσεις'
+    de: 'Notizen'
   },
   'meta.usage': {
     en: 'Usage',
-    de: 'Verwendung',
-    el: 'Χρήση'
+    de: 'Verwendung'
   },
 
   // About
   'about.title': {
     en: 'About',
-    de: 'Über mich',
-    el: 'Βιογραφικό'
+    de: 'Über mich'
   },
   'about.bio': {
     en: 'Accomplished visual artist with distinction-level Integrated Master\'s degree (300 ECTS) in Painting from Aristotle University of Thessaloniki. Graduated with honors (9.37/10), achieving exceptional thesis recognition (9.85/10). Specialized in contemporary painting practice with comprehensive foundation in drawing, color theory, composition, and emerging media. Equipped with pedagogical training and practical teaching experience. Committed to continuous artistic development and professional excellence within the visual arts sector.',
-    de: 'Ausgezeichneter bildender Künstler mit integriertem Masterstudium (300 ECTS) in Malerei mit Auszeichnung von der Aristoteles-Universität Thessaloniki. Abschluss mit Auszeichnung (9,37/10), mit außergewöhnlicher Anerkennung der Abschlussarbeit (9,85/10). Spezialisiert auf zeitgenössische Malerei mit umfassender Grundlage in Zeichnung, Farbtheorie, Komposition und neuen Medien. Ausgestattet mit pädagogischer Ausbildung und praktischer Lehrerfahrung. Engagiert für kontinuierliche künstlerische Entwicklung und professionelle Exzellenz im Bereich der bildenden Kunst.',
-    el: 'Καταξιωμένος εικαστικός καλλιτέχνης με Ενιαίο Μεταπτυχιακό Τίτλο (Integrated Master, 300 ECTS) στη Ζωγραφική από το Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης. Αποφοίτησε με βαθμό "Άριστα" (9.37/10), σημειώνοντας εξαιρετική επίδοση στη διπλωματική εργασία (9.85/10). Εξειδικεύεται στη σύγχρονη ζωγραφική με πλήρη κατάρτιση στο σχέδιο, τη θεωρία χρωμάτων, τη σύνθεση και τα νέα μέσα. Διαθέτει παιδαγωγική κατάρτιση και διδακτική εμπειρία. Δεσμευμένος για συνεχή καλλιτεχνική εξέλιξη και επαγγελματική αριστεία στον τομέα των εικαστικών τεχνών.'
+    de: 'Ausgezeichneter bildender Künstler mit integriertem Masterstudium (300 ECTS) in Malerei mit Auszeichnung von der Aristoteles-Universität Thessaloniki. Abschluss mit Auszeichnung (9,37/10), mit außergewöhnlicher Anerkennung der Abschlussarbeit (9,85/10). Spezialisiert auf zeitgenössische Malerei mit umfassender Grundlage in Zeichnung, Farbtheorie, Komposition und neuen Medien. Ausgestattet mit pädagogischer Ausbildung und praktischer Lehrerfahrung. Engagiert für kontinuierliche künstlerische Entwicklung und professionelle Exzellenz im Bereich der bildenden Kunst.'
   },
   'about.statementTitle': {
     en: 'Artist Statement',
-    de: 'Künstlerstatement',
-    el: 'Καλλιτεχνική Προσέγγιση'
+    de: 'Künstlerstatement'
   },
   'about.cvTitle': {
     en: 'Curriculum Vitae',
-    de: 'Lebenslauf',
-    el: 'Βιογραφικό Σημείωμα'
+    de: 'Lebenslauf'
   },
   'about.education': {
     en: 'Education',
-    de: 'Ausbildung',
-    el: 'Εκπαίδευση'
+    de: 'Ausbildung'
   },
   'about.exhibitions': {
     en: 'Selected Exhibitions',
-    de: 'Ausgewählte Ausstellungen',
-    el: 'Επιλεγμένες Εκθέσεις'
+    de: 'Ausgewählte Ausstellungen'
   },
   'about.experience': {
     en: 'Experience',
-    de: 'Erfahrung',
-    el: 'Εμπειρία'
+    de: 'Erfahrung'
   },
   'about.skills': {
     en: 'Skills & Tools',
-    de: 'Fähigkeiten & Tools',
-    el: 'Δεξιότητες & Εργαλεία'
+    de: 'Fähigkeiten & Tools'
   },
   'about.languages': {
     en: 'Languages & Qualifications',
-    de: 'Sprachen & Qualifikationen',
-    el: 'Γλώσσες & Προσόντα'
+    de: 'Sprachen & Qualifikationen'
   },
   'about.academicProjects': {
     en: 'Academic Projects & Research',
-    de: 'Akademische Projekte & Forschung',
-    el: 'Ακαδημαϊκά Έργα & Έρευνα'
+    de: 'Akademische Projekte & Forschung'
   },
   'about.competencies': {
     en: 'Core Competencies',
-    de: 'Kernkomπετέντζες',
-    el: 'Βασικές Δεξιότητες'
+    de: 'Kernkomπετέντζες'
   },
 
   // Contact
   'contact.title': {
     en: 'Contact',
-    de: 'Kontakt',
-    el: 'Επικοινωνία'
+    de: 'Kontakt'
   },
   'contact.subtitle': {
     en: 'Available for studio and gallery assistant roles, commissions, and collaborative projects.',
-    de: 'Offen für Stellen als Studio- oder Galerieassistent, Auftragsarbeiten und künstlerische Kooperationen.',
-    el: 'Διαθέσιμος για ρόλους βοηθού εργαστηρίου και γκαλερί, αναθέσεις έργων και συνεργασίες.'
+    de: 'Offen für Stellen als Studio- oder Galerieassistent, Auftragsarbeiten und künstlerische Kooperationen.'
   },
   'contact.email': {
     en: 'Email',
-    de: 'E-Mail',
-    el: 'Email'
+    de: 'E-Mail'
   },
   'contact.phone': {
     en: 'Phone',
-    de: 'Telefon',
-    el: 'Τηλέφωνο'
+    de: 'Telefon'
   },
   'contact.location': {
     en: 'Location',
-    de: 'Standort',
-    el: 'Τοποθεσία'
+    de: 'Standort'
   },
   'contact.social': {
     en: 'Social',
-    de: 'Social Media',
-    el: 'Κοινωνικά Δίκτυα'
+    de: 'Social Media'
   },
 
   // Footer
   'footer.tagline': {
     en: 'Contemporary Visual Artist | Painting — Thessaloniki, Greece',
-    de: 'Zeitgenössischer Bildender Künstler | Malerei — Thessaloniki, Griechenland',
-    el: 'Σύγχρονος Εικαστικός Καλλιτέχνης | Ζωγραφική — Θεσσαλονίκη, Ελλάδα'
+    de: 'Zeitgenössischer Bildender Künstler | Malerei — Thessaloniki, Griechenland'
   }
 };
 
@@ -243,7 +201,7 @@ export function t(key: string, lang: Language): string {
   return translation[lang] || translation.en;
 }
 
-export function getLocalizedValue<T extends { en: string; de: string; el?: string }>(
+export function getLocalizedValue<T extends { en: string; de?: string }>(
   value: T,
   lang: Language
 ): string {

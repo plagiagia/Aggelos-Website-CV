@@ -1,0 +1,36 @@
+[
+  {
+    "id": "work-1767394288331-ckmz0qn05",
+    "slug": "test",
+    "title": {
+      "en": "test",
+      "de": "",
+      "el": ""
+    },
+    "year": "2026",
+    "medium": "oil",
+    "dimensions": "12*12",
+    "thumbnail": "/uploads/works/work-1767394288331-ckmz0qn05/thumbnail.png",
+    "images": [
+      {
+        "src": "/uploads/works/work-1767394288331-ckmz0qn05/image-1.png",
+        "alt": {
+          "en": "test - Image 1",
+          "de": "test - Bild 1",
+          "el": "test - Εικόνα 1"
+        }
+      }
+    ],
+    "shortDescription": {
+      "en": "test",
+      "de": "",
+      "el": ""
+    },
+    "longDescription": {
+      "en": "",
+      "de": "",
+      "el": ""
+    },
+    "metadata": []
+  }
+]

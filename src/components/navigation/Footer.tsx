@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/i18n';
+import { socialLinks, email } from '@/config/social';
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -23,31 +24,26 @@ export default function Footer() {
           <div className="md:text-right">
             <div className="flex flex-col md:items-end gap-2 text-sm text-muted">
               <p>Thessaloniki, Greece</p>
+              <a
+                href={`mailto:${email}`}
+                className="hover:text-foreground transition-colors"
+                aria-label="Email contact"
+              >
+                {email}
+              </a>
               <div className="flex gap-4 mt-2">
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Instagram
-                </a>
-                <a
-                  href="https://www.behance.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Behance
-                </a>
-                <a
-                  href="https://www.linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground transition-colors"
-                >
-                  LinkedIn
-                </a>
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-foreground transition-colors"
+                    aria-label={`Visit ${link.name} profile`}
+                  >
+                    {link.name}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
