@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aggelos Giannoulis — Contemporary Visual Artist</title>
+  <meta name="description" content="Portfolio & CV of Aggelos Giannoulis (Άγγελος Γιαννούλης), contemporary visual artist (painting/drawing)." />
+  <meta name="theme-color" content="#0b0b10" />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__name">Aggelos Giannoulis</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn--ghost" href="assets/Aggelos_Giannoulis_CV_Updated.docx" download>Download CV</a>
+      </nav>
+
+      <button class="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="kicker">Contemporary Visual Artist · Painting / Drawing</p>
+          <h1>Aggelos Giannoulis <span class="muted">(Άγγελος Γιαννούλης)</span></h1>
+          <p class="lead">
+            Integrated Master of Fine Arts (Painting), Aristotle University of Thessaloniki.
+            Practice centered on colored pencil and contemporary painting, exploring intimacy, identity, and transcendence.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn" href="#work">View selected work</a>
+            <a class="btn btn--ghost" href="assets/Master_Thesis_Portfolio.pdf" download>Thesis PDF</a>
+          </div>
+
+          <ul class="meta">
+            <li><strong>Based in:</strong> Thessaloniki, GR (available for exhibitions & collaborations)</li>
+            <li><strong>Languages:</strong> Greek (native), English (advanced)</li>
+          </ul>
+        </div>
+
+        <div class="hero__card">
+          <div class="hero__cardTop">
+            <div>
+              <div class="label">MFA (Integrated) · Painting</div>
+              <div class="big">9.37/10</div>
+              <div class="small muted">Final grade · 300 ECTS</div>
+            </div>
+            <div class="divider"></div>
+            <div>
+              <div class="label">Thesis grade</div>
+              <div class="big">9.85/10</div>
+              <div class="small muted">June 2025 · A.U.Th.</div>
+            </div>
+          </div>
+          <p class="hero__cardNote">
+            Master’s thesis exhibition series: <em>“Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά”</em>
+            (The Salvation of the World Was One Orgasm Away).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section__head">
+          <h2>Selected work</h2>
+          <p class="muted">A small, curated set from the thesis series (2023–2025). Click to view.</p>
+        </div>
+
+        <div class="toolbar">
+          <input id="workSearch" class="input" type="search" placeholder="Search titles…" autocomplete="off" />
+          <button id="clearSearch" class="btn btn--ghost" type="button">Clear</button>
+        </div>
+
+        <div id="workGrid" class="grid" aria-live="polite"></div>
+
+        <p class="note">
+          For full documentation and additional works, download the thesis PDF above.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>About</h2>
+          <p class="muted">Short bio + practice statement (MVP version).</p>
+        </div>
+
+        <div class="cols">
+          <div class="card">
+            <h3>Artist bio</h3>
+            <p>
+              Aggelos Giannoulis is a contemporary visual artist working primarily with colored pencil on paper,
+              alongside oil, acrylic, mixed media, and printmaking. He holds a distinction-level Integrated Master’s
+              degree in Painting from Aristotle University of Thessaloniki (School of Fine & Applied Arts).
+            </p>
+            <p>
+              His practice explores intimacy, vulnerability, embodiment, and pop-cultural fragments—building images
+              where the personal and the social collide.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Thesis series (June 2025)</h3>
+            <p>
+              <em>“Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά”</em> is a research-led studio project presented as a
+              cohesive body of 20+ works. The series investigates moments of intensity and presence, asking what
+              “salvation” could mean when experienced as surrender, connection, and radical acceptance.
+            </p>
+            <div class="chips">
+              <span class="chip">colored pencil</span>
+              <span class="chip">identity</span>
+              <span class="chip">intimacy</span>
+              <span class="chip">embodiment</span>
+              <span class="chip">social critique</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cv">
+      <div class="container">
+        <div class="section__head">
+          <h2>CV highlights</h2>
+          <p class="muted">Lean, readable, and easy to update.</p>
+        </div>
+
+        <div class="cv">
+          <div class="cvBlock">
+            <h3>Education</h3>
+            <ul>
+              <li><strong>Integrated Master of Fine Arts (Painting)</strong>, Aristotle University of Thessaloniki (A.U.Th.), 2019–2025</li>
+              <li>300 ECTS · Final grade: <strong>9.37/10</strong> · Thesis: <strong>9.85/10</strong></li>
+              <li>Pedagogical training: Teaching Approach of Art I–II (incl. supervised practicum)</li>
+            </ul>
+          </div>
+
+          <div class="cvBlock">
+            <h3>Core competencies</h3>
+            <ul class="twoCol">
+              <li>Colored pencil (advanced)</li>
+              <li>Oil / acrylic / mixed media</li>
+              <li>Drawing · composition · color theory</li>
+              <li>Printmaking techniques</li>
+              <li>Exhibition installation & artwork handling</li>
+              <li>Art historical research · critical theory</li>
+              <li>Adobe CC (Photoshop, Illustrator, Lightroom)</li>
+              <li>Procreate · DSLR photography · archiving</li>
+            </ul>
+          </div>
+
+          <div class="cvBlock">
+            <h3>Selected presentation</h3>
+            <ul>
+              <li>
+                <strong>Master’s Thesis Exhibition</strong> — “Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά”
+                (June 2025 · 3rd Painting Workshop, A.U.Th., Thessaloniki)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn" href="assets/Aggelos_Giannoulis_CV_Updated.docx" download>Download CV (DOCX)</a>
+          <a class="btn btn--ghost" href="assets/Master_Thesis_Portfolio.pdf" download>Download thesis PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p class="muted">Add your real contact links and you’re live.</p>
+        </div>
+
+        <div class="contact card">
+          <p class="muted">Replace placeholders in <code>index.html</code> with real details:</p>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>Phone:</strong> +30 …</li>
+            <li><strong>Instagram:</strong> <a href="#" rel="nofollow noopener">instagram.com/…</a></li>
+          </ul>
+        </div>
+
+        <footer class="footer">
+          <p class="muted">© <span id="year"></span> Aggelos Giannoulis · Built as an MVP portfolio</p>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="modal" id="workModal" aria-label="Artwork viewer">
+    <button class="modal__close" type="button" aria-label="Close">×</button>
+    <figure class="modal__content">
+      <img id="modalImg" alt="" />
+      <figcaption>
+        <div id="modalTitle" class="modal__title"></div>
+        <div id="modalMeta" class="muted"></div>
+      </figcaption>
+    </figure>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
