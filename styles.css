@@ -15,6 +15,7 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
   font-family: var(--font-body);
@@ -313,7 +314,29 @@ h3{margin:0 0 10px; font-size:1.08rem}
     min-width: 220px;
   }
 }
+@media (max-width: 700px){
+  .topbar__inner{padding:10px 0}
+  .hero{padding:64px 0 28px}
+  .section{padding:42px 0}
+  .section__head{flex-direction:column; align-items:flex-start}
+  .section__head p{max-width:100%}
+  .ctaRow{flex-direction:column; align-items:stretch}
+  .ctaRow .btn{width:100%}
+  .toolbar{flex-direction:column; align-items:stretch}
+  .input{width:100%}
+  .nav.isOpen{left:4vw; right:4vw}
+  .nav.isOpen a{display:block}
+  .nav.isOpen a:not(.btn){padding:10px 12px; border-radius:12px; background: rgba(255,255,255,.9)}
+}
 @media (max-width: 520px){
   .grid{grid-template-columns:1fr}
   .cardWork img{height:220px}
+}
+@media (max-width: 480px){
+  .hero__cardTop{grid-template-columns:1fr; gap:12px}
+  .divider{display:none}
+  .kicker{font-size:.7rem; letter-spacing:.14em}
+  .big{font-size:1.7rem}
+  .label{font-size:.78rem}
+  .footer{padding:20px 0 6px}
 }
