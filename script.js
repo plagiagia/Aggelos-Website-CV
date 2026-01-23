@@ -110,10 +110,11 @@ function render(items){
     grid.appendChild(div);
     return;
   }
-  for(const w of items){
+  items.forEach((w, idx) => {
     const card = document.createElement('button');
     card.type = 'button';
     card.className = 'cardWork';
+    card.style.setProperty('--i', idx);
     card.setAttribute('aria-label', `Open artwork: ${w.title}`);
     card.innerHTML = `
       <img src="${w.thumb}" alt="${w.title}" loading="lazy" />
@@ -124,7 +125,7 @@ function render(items){
     `;
     card.addEventListener('click', () => openModal(w));
     grid.appendChild(card);
-  }
+  });
 }
 
 function openModal(w){
