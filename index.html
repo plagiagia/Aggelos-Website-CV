@@ -17,12 +17,12 @@
 
   <header class="topbar">
     <div class="container topbar__inner">
-      <div class="brand">
+      <a class="brand" href="#top" aria-label="Go to top">
         <span class="brand__dot" aria-hidden="true"></span>
         <span class="brand__name">Aggelos Giannoulis</span>
-      </div>
+      </a>
 
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" id="primaryNav" aria-label="Primary">
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#cv">CV</a>
@@ -30,7 +30,7 @@
         <a class="btn btn--ghost" href="assets/Aggelos_Giannoulis_CV_Updated.docx" download>Download CV</a>
       </nav>
 
-      <button class="navToggle" aria-label="Open menu" aria-expanded="false">
+      <button class="navToggle" type="button" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -58,25 +58,15 @@
           </ul>
         </div>
 
-        <div class="hero__card">
-          <div class="hero__cardTop">
-            <div>
-              <div class="label">MFA (Integrated) · Painting</div>
-              <div class="big">9.37/10</div>
-              <div class="small muted">Final grade · 300 ECTS</div>
-            </div>
-            <div class="divider"></div>
-            <div>
-              <div class="label">Thesis grade</div>
-              <div class="big">9.85/10</div>
-              <div class="small muted">June 2025 · A.U.Th.</div>
-            </div>
-          </div>
-          <p class="hero__cardNote">
-            Master’s thesis exhibition series: <em>“Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά”</em>
-            (The Salvation of the World Was One Orgasm Away).
-          </p>
-        </div>
+        <button class="heroFeature" type="button" data-open-work="p29" aria-label="Open featured artwork: Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά">
+          <img class="heroFeature__img" src="assets/thumbs/29-η-σωτηρία-του-κόσμου-ήταν-έναν-οργασμό-μακριά-series-title.jpg" alt="Η σωτηρία του κόσμου ήταν έναν οργασμό μακριά (series title)" loading="eager" decoding="async" />
+          <span class="heroFeature__cap">
+            <span class="heroFeature__kicker">Thesis series (June 2025)</span>
+            <span class="heroFeature__title">“Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά”</span>
+            <span class="heroFeature__sub muted">The Salvation of the World Was One Orgasm Away</span>
+            <span class="heroFeature__hint">Click to view</span>
+          </span>
+        </button>
       </div>
     </section>
 
@@ -90,6 +80,7 @@
         <div class="toolbar">
           <input id="workSearch" class="input" type="search" placeholder="Search titles…" autocomplete="off" />
           <button id="clearSearch" class="btn btn--ghost" type="button">Clear</button>
+          <div class="toolbar__meta muted" aria-live="polite"><span id="workCount"></span></div>
         </div>
 
         <div id="workGrid" class="grid" aria-live="polite"></div>
@@ -104,7 +95,7 @@
       <div class="container">
         <div class="section__head">
           <h2>About</h2>
-          <p class="muted">Short bio + practice statement (MVP version).</p>
+          <p class="muted">Bio + practice statement.</p>
         </div>
 
         <div class="cols">
@@ -195,7 +186,7 @@
         </div>
 
         <div class="contact card">
-          <p class="muted">Replace placeholders in <code>index.html</code> with real details:</p>
+          <p class="muted">For exhibitions, commissions, and collaborations:</p>
           <ul>
             <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
             <li><strong>Phone:</strong> +30 …</li>
@@ -204,7 +195,7 @@
         </div>
 
         <footer class="footer">
-          <p class="muted">© <span id="year"></span> Aggelos Giannoulis · Built as an MVP portfolio</p>
+          <p class="muted">© <span id="year"></span> Aggelos Giannoulis</p>
         </footer>
       </div>
     </section>
@@ -212,11 +203,14 @@
 
   <dialog class="modal" id="workModal" aria-label="Artwork viewer">
     <button class="modal__close" type="button" aria-label="Close">×</button>
+    <button class="modal__nav modal__nav--prev" type="button" aria-label="Previous artwork">‹</button>
+    <button class="modal__nav modal__nav--next" type="button" aria-label="Next artwork">›</button>
     <figure class="modal__content">
       <img id="modalImg" alt="" />
       <figcaption>
         <div id="modalTitle" class="modal__title"></div>
         <div id="modalMeta" class="muted"></div>
+        <div id="modalNotes" class="modal__notes"></div>
       </figcaption>
     </figure>
   </dialog>

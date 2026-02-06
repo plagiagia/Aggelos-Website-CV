@@ -96,12 +96,31 @@ const modal = document.getElementById('workModal');
 const modalImg = document.getElementById('modalImg');
 const modalTitle = document.getElementById('modalTitle');
 const modalMeta = document.getElementById('modalMeta');
+const modalNotes = document.getElementById('modalNotes');
 const yearEl = document.getElementById('year');
+const workCount = document.getElementById('workCount');
 
 const q = document.getElementById('workSearch');
 const clearBtn = document.getElementById('clearSearch');
 
+const modalPrev = document.querySelector('.modal__nav--prev');
+const modalNext = document.querySelector('.modal__nav--next');
+
+let gridItems = WORKS.slice();
+let modalItems = WORKS.slice();
+let modalIndex = -1;
+let modalToken = 0;
+
+function updateCount(items){
+  if(!workCount) return;
+  const total = WORKS.length;
+  const n = items.length;
+  workCount.textContent = (n === total) ? `${n} works` : `${n} / ${total} works`;
+}
+
 function render(items){
+  gridItems = items.slice();
+  updateCount(gridItems);
   grid.innerHTML = '';
   if(!items.length){
     const div = document.createElement('div');
@@ -113,27 +132,49 @@ function render(items){
   items.forEach((w, idx) => {
     const card = document.createElement('button');
     card.type = 'button';
-    card.className = 'cardWork';
+    card.className = (idx === 0) ? 'cardWork cardWork--featured' : 'cardWork';
     card.style.setProperty('--i', idx);
     card.setAttribute('aria-label', `Open artwork: ${w.title}`);
     card.innerHTML = `
-      <img src="${w.thumb}" alt="${w.title}" loading="lazy" />
+      <img src="${w.thumb}" alt="${w.title}" loading="lazy" decoding="async" />
       <div class="cardWork__body">
         <div class="title">${w.title}</div>
         <div class="sub">${w.year} · ${w.medium}</div>
       </div>
     `;
-    card.addEventListener('click', () => openModal(w));
+    card.addEventListener('click', () => openModal(w, gridItems));
     grid.appendChild(card);
   });
 }
 
-function openModal(w){
-  modalImg.src = w.image;
+function openModal(w, itemsForNav = gridItems){
+  if(!w) return;
+
+  modalItems = (itemsForNav && itemsForNav.length) ? itemsForNav.slice() : WORKS.slice();
+  modalIndex = modalItems.findIndex(x => x.id === w.id);
+  if(modalIndex < 0){
+    modalItems = WORKS.slice();
+    modalIndex = modalItems.findIndex(x => x.id === w.id);
+  }
+
+  modalToken += 1;
+  const token = modalToken;
+
+  modalImg.src = w.thumb || w.image;
   modalImg.alt = w.title;
   modalTitle.textContent = w.title;
   modalMeta.textContent = `${w.year} · ${w.medium}`;
-  if(typeof modal.showModal === 'function') modal.showModal();
+  if(modalNotes) modalNotes.textContent = w.notes || '';
+  if(!modal.open && typeof modal.showModal === 'function') modal.showModal();
+
+  // Swap to full-size image once loaded (keeps the modal snappy on slower connections).
+  const hi = new Image();
+  hi.decoding = 'async';
+  hi.src = w.image;
+  hi.onload = () => {
+    if(token !== modalToken) return;
+    modalImg.src = w.image;
+  };
 }
 
 function closeModal(){
@@ -141,6 +182,18 @@ function closeModal(){
 }
 
 document.querySelector('.modal__close').addEventListener('click', closeModal);
+
+function openAdjacent(dir){
+  if(!modal.open) return;
+  if(!modalItems.length) return;
+  const n = modalItems.length;
+  const nextIdx = (modalIndex + dir + n) % n;
+  openModal(modalItems[nextIdx], modalItems);
+}
+
+if(modalPrev) modalPrev.addEventListener('click', () => openAdjacent(-1));
+if(modalNext) modalNext.addEventListener('click', () => openAdjacent(1));
+
 modal.addEventListener('click', (e) => {
   const rect = modal.getBoundingClientRect();
   const clickedBackdrop = (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom);
@@ -148,6 +201,9 @@ modal.addEventListener('click', (e) => {
 });
 window.addEventListener('keydown', (e) => {
   if(e.key === 'Escape') closeModal();
+  if(!modal.open) return;
+  if(e.key === 'ArrowLeft'){ e.preventDefault(); openAdjacent(-1); }
+  if(e.key === 'ArrowRight'){ e.preventDefault(); openAdjacent(1); }
 });
 
 function applySearch(){
@@ -171,5 +227,20 @@ const nav = document.querySelector('.nav');
 navToggle.addEventListener('click', () => {
   const open = nav.classList.toggle('isOpen');
   navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+});
+nav.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if(!a) return;
+  nav.classList.remove('isOpen');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Open menu');
+});
+
+document.querySelectorAll('[data-open-work]').forEach((el) => {
+  const id = el.getAttribute('data-open-work');
+  const w = WORKS.find(x => x.id === id);
+  if(!w) return;
+  el.addEventListener('click', () => openModal(w, WORKS));
 });
 render(WORKS);

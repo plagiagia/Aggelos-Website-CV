@@ -31,6 +31,19 @@ body{
 
 a{color:inherit}
 code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+button,input{font:inherit}
+
+.topbar a:focus-visible,
+.btn:focus-visible,
+.navToggle:focus-visible,
+.cardWork:focus-visible,
+.heroFeature:focus-visible,
+input:focus-visible{
+  outline: 3px solid rgba(31,90,82,.55);
+  outline-offset: 3px;
+}
+
+.section{scroll-margin-top: 86px}
 
 .container{width:min(1100px, 92vw); margin:0 auto}
 
@@ -49,7 +62,7 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libera
   display:flex; align-items:center; justify-content:space-between;
   padding:12px 0;
 }
-.brand{display:flex; align-items:center; gap:10px; font-weight:600}
+.brand{display:flex; align-items:center; gap:10px; font-weight:600; text-decoration:none; color:inherit}
 .brand__dot{
   width:10px; height:10px; border-radius:2px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -80,6 +93,7 @@ code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libera
   box-shadow: 0 10px 30px rgba(27,27,25,.18);
   text-decoration:none;
   font-weight:600;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 .btn:hover{transform: translateY(-1px)}
 .btn--ghost{
@@ -129,37 +143,66 @@ h3{margin:0 0 10px; font-size:1.08rem}
 .meta{margin:18px 0 0; padding:0; list-style:none; color:var(--muted)}
 .meta li{margin:6px 0}
 
-.hero__card{
+.heroFeature{
+  width:100%;
+  padding:0;
   border-radius: var(--radius);
-  background: var(--panel);
   border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
+  background: var(--panel);
   box-shadow: var(--shadow);
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  gap:14px;
-  position:relative;
+  overflow:hidden;
+  cursor: zoom-in;
+  text-align:left;
+  appearance:none;
+  -webkit-appearance:none;
+  transition: transform .15s ease, border-color .15s ease;
   opacity:0;
   transform: translateY(16px);
   animation: fadeUp .9s ease .12s forwards;
 }
-.hero__card::before{
-  content:"Exhibition Notes";
+.heroFeature:hover{border-color: rgba(31,90,82,.4)}
+.heroFeature__img{
+  width:100%;
   display:block;
-  margin-bottom:6px;
-  font-size:.72rem;
-  letter-spacing:.22em;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--panel2);
+  transform: scale(1);
+  transition: transform .35s ease;
+}
+.heroFeature:hover .heroFeature__img{transform: scale(1.03)}
+.heroFeature__cap{
+  display:block;
+  padding:14px 16px 16px;
+  border-top: 1px solid var(--line);
+}
+.heroFeature__kicker{
+  display:block;
+  font-size:.74rem;
+  letter-spacing:.2em;
   text-transform:uppercase;
   color:var(--muted);
 }
-.hero__cardTop{display:grid; grid-template-columns: 1fr 1px 1fr; gap:14px; align-items:center}
-.divider{height:100%; background:var(--line)}
-.label{color:var(--muted); font-size:.88rem; text-transform:uppercase; letter-spacing:.12em}
-.big{font-size:2.05rem; font-weight:700; letter-spacing:.2px}
-.small{font-size:.9rem}
-.hero__cardNote{margin:14px 0 0; color:var(--muted)}
+.heroFeature__title{
+  display:block;
+  margin-top:8px;
+  font-family: var(--font-display);
+  font-size:1.35rem;
+  line-height:1.1;
+}
+.heroFeature__sub{
+  display:block;
+  margin-top:6px;
+}
+.heroFeature__hint{
+  display:inline-block;
+  margin-top:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.92);
+  font-size:.86rem;
+}
 
 .section{padding:56px 0}
 .section__head{display:flex; justify-content:space-between; align-items:flex-end; gap:14px; margin-bottom:18px}
@@ -170,6 +213,7 @@ h3{margin:0 0 10px; font-size:1.08rem}
   align-items:center;
   margin: 14px 0 18px;
 }
+.toolbar__meta{margin-left:auto}
 .input{
   width:min(420px, 100%);
   padding:12px 14px;
@@ -191,6 +235,10 @@ h3{margin:0 0 10px; font-size:1.08rem}
   background: var(--panel);
   overflow:hidden;
   cursor:pointer;
+  padding:0;
+  text-align:left;
+  appearance:none;
+  -webkit-appearance:none;
   box-shadow: 0 12px 35px rgba(27,27,25,.12);
   transition: transform .15s ease, border-color .15s ease;
   opacity:0;
@@ -199,7 +247,18 @@ h3{margin:0 0 10px; font-size:1.08rem}
   animation-delay: calc(var(--i, 0) * 0.05s);
 }
 .cardWork:hover{transform: translateY(-2px); border-color: rgba(31,90,82,.4)}
-.cardWork img{width:100%; height:240px; object-fit:cover; display:block; background: var(--panel2)}
+.cardWork img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  display:block;
+  background: var(--panel2);
+  transform: scale(1);
+  transition: transform .35s ease;
+}
+.cardWork:hover img{transform: scale(1.03)}
+.cardWork--featured{grid-column: span 2}
+.cardWork--featured img{height:320px}
 .cardWork .cardWork__body{padding:12px 12px 14px}
 .cardWork .title{font-weight:600; letter-spacing:.2px; font-family: var(--font-display)}
 .cardWork .sub{color:var(--muted); font-size:.92rem; margin-top:3px}
@@ -267,10 +326,25 @@ h3{margin:0 0 10px; font-size:1.08rem}
   font-size: 26px;
   cursor:pointer;
 }
+.modal__nav{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:44px; height:44px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.9);
+  color:var(--text);
+  font-size: 28px;
+  cursor:pointer;
+}
+.modal__nav--prev{left:10px}
+.modal__nav--next{right:10px}
 .modal__content{margin:0}
 .modal__content img{width:100%; max-height:72vh; object-fit:contain; display:block; background: var(--panel2)}
 .modal__content figcaption{padding:12px 16px 16px}
 .modal__title{font-weight:800; font-size:1.1rem; margin-bottom:4px}
+.modal__notes{margin-top:10px; color:var(--muted)}
 
 @keyframes fadeUp{
   to{opacity:1; transform: translateY(0)}
@@ -281,7 +355,7 @@ h3{margin:0 0 10px; font-size:1.08rem}
 
 @media (prefers-reduced-motion: reduce){
   .hero__copy > *,
-  .hero__card,
+  .heroFeature,
   .cardWork{
     animation:none;
     opacity:1;
@@ -333,10 +407,6 @@ h3{margin:0 0 10px; font-size:1.08rem}
   .cardWork img{height:220px}
 }
 @media (max-width: 480px){
-  .hero__cardTop{grid-template-columns:1fr; gap:12px}
-  .divider{display:none}
   .kicker{font-size:.7rem; letter-spacing:.14em}
-  .big{font-size:1.7rem}
-  .label{font-size:.78rem}
   .footer{padding:20px 0 6px}
 }
