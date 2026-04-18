@@ -106,6 +106,54 @@ const clearBtn = document.getElementById('clearSearch');
 const modalPrev = document.querySelector('.modal__nav--prev');
 const modalNext = document.querySelector('.modal__nav--next');
 
+/* ── Dark mode ──────────────────────────────────────────────── */
+(function initTheme() {
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = stored || (prefersDark ? 'dark' : 'light');
+  if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+})();
+
+document.querySelector('.themeToggle')?.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
+/* ── Scroll reveal via IntersectionObserver ─────────────────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('revealed');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+function observeReveal(el) {
+  el.classList.add('reveal');
+  revealObserver.observe(el);
+}
+
+/* ── Active nav on scroll ───────────────────────────────────── */
+const navLinks = document.querySelectorAll('.nav > a[href^="#"]');
+const sections = Array.from(navLinks)
+  .map(a => document.querySelector(a.getAttribute('href')))
+  .filter(Boolean);
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    const id = e.target.id;
+    const link = document.querySelector(`.nav > a[href="#${id}"]`);
+    if (!link) return;
+    if (e.isIntersecting) link.classList.add('active');
+    else link.classList.remove('active');
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+
+sections.forEach(s => sectionObserver.observe(s));
+
 let gridItems = WORKS.slice();
 let modalItems = WORKS.slice();
 let modalIndex = -1;
@@ -144,6 +192,9 @@ function render(items){
     `;
     card.addEventListener('click', () => openModal(w, gridItems));
     grid.appendChild(card);
+    // stagger scroll-reveal per card
+    card.style.transitionDelay = `${idx * 0.05}s`;
+    observeReveal(card);
   });
 }
 
@@ -244,3 +295,9 @@ document.querySelectorAll('[data-open-work]').forEach((el) => {
   el.addEventListener('click', () => openModal(w, WORKS));
 });
 render(WORKS);
+
+// Scroll-reveal for static section elements
+document.querySelectorAll('.card, .cvBlock, .section__head, .note, .footer').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 4) * 0.07}s`;
+  observeReveal(el);
+});
