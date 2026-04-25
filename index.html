@@ -3,6 +3,237 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aggelos Giannoulis — Visual Artist</title>
+  <meta name="description" content="Portfolio of Aggelos Giannoulis (Άγγελος Γιαννούλης) — contemporary visual artist working in colored pencil, painting, and drawing. Based in Thessaloniki." />
+  <meta name="theme-color" content="#f4f1ea" />
+  <meta property="og:title" content="Aggelos Giannoulis — Visual Artist" />
+  <meta property="og:description" content="Selected works (2023–2025) and CV." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/works/29-η-σωτηρία-του-κόσμου-ήταν-έναν-οργασμό-μακριά-series-title.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#works">Skip to works</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="Aggelos Giannoulis — home">
+        <span class="brand__name">Aggelos Giannoulis</span>
+        <span class="brand__sub">Άγγελος Γιαννούλης</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="#works">Works</a>
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+          <span class="icon-sun" aria-hidden="true">☀</span>
+          <span class="icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <button class="navToggle" type="button" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Cover -->
+    <section class="cover">
+      <button class="cover__image" type="button" data-open-work="p29" aria-label="Open featured artwork">
+        <img src="assets/works/29-η-σωτηρία-του-κόσμου-ήταν-έναν-οργασμό-μακριά-series-title.jpg"
+             alt="Featured artwork from the thesis series"
+             loading="eager" decoding="async" fetchpriority="high" />
+      </button>
+
+      <div class="container cover__caption">
+        <p class="eyebrow">Thesis series · June 2025</p>
+        <h1 class="cover__title">
+          <em>Η Σωτηρία του κόσμου<br/>ήταν έναν οργασμό μακριά</em>
+        </h1>
+        <p class="cover__sub">The Salvation of the World Was One Orgasm Away</p>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="statement container" aria-label="Artist statement">
+      <p class="eyebrow">Aggelos Giannoulis — Visual artist, b. Greece</p>
+      <p class="statement__lead">
+        A practice rooted in <em>colored pencil on paper</em>, alongside painting and printmaking —
+        building images where intimacy, the body, and pop-cultural debris collide. Drawings move slowly,
+        layer by layer, toward something between portrait and confession.
+      </p>
+      <div class="statement__cta">
+        <a class="link" href="#works">Selected works <span aria-hidden="true">→</span></a>
+        <a class="link" href="assets/Master_Thesis_Portfolio.pdf" target="_blank" rel="noopener">Thesis PDF</a>
+        <a class="link" href="assets/Aggelos_Giannoulis_CV_Updated.docx" download>CV (DOCX)</a>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section class="section" id="works">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Index of works</p>
+          <h2 class="section__title">Selected works</h2>
+          <p class="section__note">
+            A curated set from the thesis series, 2023–2025. Click any image to enlarge.
+          </p>
+        </header>
+
+        <div id="workGroups" class="workGroups" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section--alt" id="about">
+      <div class="container about">
+        <div class="about__col">
+          <p class="eyebrow">About</p>
+          <h2 class="section__title">Biography</h2>
+        </div>
+        <div class="about__col about__body">
+          <p>
+            Aggelos Giannoulis (b. Greece) is a contemporary visual artist working primarily with
+            <em>colored pencil on paper</em>, alongside oil, acrylic, mixed media, and printmaking.
+            He holds a distinction-level Integrated Master’s degree in Painting from the
+            Aristotle University of Thessaloniki, School of Fine &amp; Applied Arts (2019–2025,
+            final grade 9.37/10; thesis 9.85/10).
+          </p>
+          <p>
+            His practice explores intimacy, vulnerability, embodiment, and the residue of
+            popular culture — building images where the personal and the social collide.
+            The thesis series <em>“Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά”</em>
+            (June 2025) presents twenty-plus works circling moments of intensity and presence,
+            asking what salvation might mean when felt as surrender, connection, and radical
+            acceptance.
+          </p>
+          <p class="about__location">
+            Lives and works in Thessaloniki, Greece. Available for exhibitions, commissions,
+            and collaborations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section class="section" id="cv">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Curriculum vitae</p>
+          <h2 class="section__title">CV</h2>
+        </header>
+
+        <div class="cv">
+          <div class="cvRow">
+            <div class="cvRow__label">Education</div>
+            <div class="cvRow__body">
+              <p><strong>2019 – 2025</strong> &nbsp; Integrated Master of Fine Arts (Painting), Aristotle University of Thessaloniki — 300 ECTS · final grade <strong>9.37 / 10</strong> · thesis <strong>9.85 / 10</strong>.</p>
+              <p>Pedagogical training: Teaching Approach of Art I–II (incl. supervised practicum).</p>
+            </div>
+          </div>
+
+          <div class="cvRow">
+            <div class="cvRow__label">Exhibitions</div>
+            <div class="cvRow__body">
+              <p><strong>2025</strong> &nbsp; <em>Η Σωτηρία του κόσμου ήταν έναν οργασμό μακριά</em> — Master’s Thesis Exhibition, 3rd Painting Workshop, A.U.Th., Thessaloniki.</p>
+            </div>
+          </div>
+
+          <div class="cvRow">
+            <div class="cvRow__label">Practice</div>
+            <div class="cvRow__body cvRow__body--cols">
+              <ul>
+                <li>Colored pencil (advanced)</li>
+                <li>Oil, acrylic &amp; mixed media</li>
+                <li>Drawing, composition, color theory</li>
+                <li>Printmaking</li>
+              </ul>
+              <ul>
+                <li>Exhibition installation &amp; artwork handling</li>
+                <li>Art-historical research &amp; critical theory</li>
+                <li>Adobe CC (Photoshop, Illustrator, Lightroom)</li>
+                <li>Procreate · DSLR photography · archiving</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cvRow">
+            <div class="cvRow__label">Languages</div>
+            <div class="cvRow__body">
+              <p>Greek (native) · English (advanced)</p>
+            </div>
+          </div>
+
+          <div class="cvRow">
+            <div class="cvRow__label">Documents</div>
+            <div class="cvRow__body">
+              <a class="link" href="assets/Aggelos_Giannoulis_CV_Updated.docx" download>Download CV (DOCX) <span aria-hidden="true">↓</span></a>
+              &nbsp;&nbsp;
+              <a class="link" href="assets/Master_Thesis_Portfolio.pdf" target="_blank" rel="noopener">Thesis portfolio (PDF) <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <div class="container contact">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title contact__title">
+          <em>For exhibitions, commissions<br/>and collaborations.</em>
+        </h2>
+        <ul class="contact__list">
+          <li><span class="contact__label">Email</span><a href="mailto:your.email@example.com">your.email@example.com</a></li>
+          <li><span class="contact__label">Phone</span><a href="tel:+30">+30 …</a></li>
+          <li><span class="contact__label">Instagram</span><a href="#" rel="nofollow noopener">@…</a></li>
+          <li><span class="contact__label">Studio</span><span>Thessaloniki, Greece</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© <span id="year"></span> Aggelos Giannoulis</span>
+        <span class="muted">All works © the artist.</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Lightbox -->
+  <dialog class="modal" id="workModal" aria-label="Artwork viewer">
+    <button class="modal__close" type="button" aria-label="Close">×</button>
+    <button class="modal__nav modal__nav--prev" type="button" aria-label="Previous artwork">‹</button>
+    <button class="modal__nav modal__nav--next" type="button" aria-label="Next artwork">›</button>
+    <figure class="modal__content">
+      <img id="modalImg" alt="" />
+      <figcaption>
+        <div id="modalTitle" class="modal__title"></div>
+        <div id="modalMeta" class="modal__meta"></div>
+        <div id="modalNotes" class="modal__notes"></div>
+      </figcaption>
+    </figure>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aggelos Giannoulis — Contemporary Visual Artist</title>
   <meta name="description" content="Portfolio & CV of Aggelos Giannoulis (Άγγελος Γιαννούλης), contemporary visual artist (painting/drawing)." />
   <meta name="theme-color" content="#f8f6f0" />
