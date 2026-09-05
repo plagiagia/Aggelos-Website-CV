@@ -6,3 +6,9 @@ Thumbs.db
 
 # Editor
 .vscode/
+.env*
+!.env.example
+.vercel/
+dist/
+artifacts/
+portfolio-preview.png

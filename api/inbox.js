@@ -1,0 +1,2 @@
+import {wrap,method,json,db,body,requireAdmin,fail} from '../lib/core.mjs';
+export default wrap(async(req,res)=>{method(req,['GET','DELETE']);requireAdmin(req);if(req.method==='GET')return json(res,200,await db('/rest/v1/enquiries?select=*&order=created_at.desc&limit=200'));const b=await body(req);if(!/^[a-f0-9-]{36}$/.test(b.id||''))fail('Invalid enquiry.');await db('/rest/v1/enquiries?id=eq.'+b.id,{method:'DELETE'});json(res,200,{ok:true});});

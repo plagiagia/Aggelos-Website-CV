@@ -1,0 +1,22 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {sessionCookie,isAdmin,validateWork} from '../lib/core.mjs';
+import works from '../api/works.js';import contact from '../api/contact.js';import session from '../api/session.js';import upload from '../api/upload.js';import inbox from '../api/inbox.js';
+process.env.SESSION_SECRET='test-session-secret-with-more-than-32-characters';process.env.ADMIN_PASSWORD='test-password-with-16-characters';
+const request=async(handler,{method='GET',body,headers={},url='/api/works'}={})=>{const req={method,body,url,headers:{host:'localhost',...headers},socket:{remoteAddress:'127.0.0.1'}};const res={headers:{},setHeader(k,v){this.headers[k]=v;},end(s){this.data=JSON.parse(s);}};await handler(req,res);return res;};
+const cookie=()=>sessionCookie({}).split(';')[0];
+test('sessions reject missing, tampered and expired cookies',()=>{assert.equal(isAdmin({headers:{}}),false);assert.equal(isAdmin({headers:{cookie:cookie()}}),true);assert.equal(isAdmin({headers:{cookie:cookie()+'a'}}),false);assert.equal(isAdmin({headers:{cookie:'studio_session=1.invalid'}}),false);});
+test('unconfigured public site returns original ten works',async()=>{const r=await request(works);assert.equal(r.statusCode,200);assert.equal(r.data.length,10);assert.ok(r.data.every(w=>w.year===2023));});
+test('all private actions require authentication',async()=>{for(const [fn,method,url] of [[works,'POST','/api/works'],[works,'GET','/api/works?admin=1'],[upload,'POST','/api/upload'],[inbox,'GET','/api/inbox']]){const r=await request(fn,{method,url,body:{}});assert.equal(r.statusCode,401);}});
+test('cross-origin writes rejected',async()=>{const r=await request(contact,{method:'POST',headers:{origin:'https://evil.example'},body:{}});assert.equal(r.statusCode,403);});
+test('invalid contact data never reaches storage',async()=>{const r=await request(contact,{method:'POST',body:{name:'Art visitor',email:'bad',subject:'Work',message:'Hello there!'}});assert.equal(r.statusCode,400);});
+test('honeypot quietly rejects spam',async()=>{const r=await request(contact,{method:'POST',body:{website:'spam'}});assert.equal(r.statusCode,200);});
+test('artwork validation rejects executable image URLs',()=>{assert.throws(()=>validateWork({year:2023,position:0,published:true,image:'javascript:alert(1)'}));});
+test('configured storage flow: login, upload, publish, contact, inbox',async()=>{process.env.SUPABASE_URL='https://test.supabase.co';process.env.SUPABASE_SERVICE_ROLE_KEY='test';const original=global.fetch;const rows=[],messages=[];global.fetch=async(url,options={})=>{let data;const b=typeof options.body==='string'?JSON.parse(options.body):options.body;if(url.includes('check_rate'))data=true;else if(url.includes('/storage/'))data={Key:'test'};else if(url.includes('/artworks')){if(options.method==='POST'){rows.push({id:'test-work',...b});data=[rows.at(-1)];}else data=rows;}else if(url.includes('/enquiries')){if(options.method==='POST')messages.push(b);data=messages;}else throw Error('Unexpected call');return new Response(JSON.stringify(data),{status:200});};try{
+const wrong=await request(session,{method:'POST',body:{password:'wrong'}});assert.equal(wrong.statusCode,401);
+const login=await request(session,{method:'POST',body:{password:process.env.ADMIN_PASSWORD}});assert.equal(login.statusCode,200);assert.match(login.headers['Set-Cookie'],/HttpOnly/);const headers={cookie:login.headers['Set-Cookie'].split(';')[0]};
+const invalid=await request(upload,{method:'POST',headers,body:{data:Buffer.from('<svg/>').toString('base64')}});assert.equal(invalid.statusCode,400);
+const img=await request(upload,{method:'POST',headers,body:{data:Buffer.from([255,216,255,224]).toString('base64')}});assert.equal(img.statusCode,201);
+const save=await request(works,{method:'POST',headers,body:{title:'Test drawing',year:2023,position:1,medium:'Pencil',alt:'A drawing',image:img.data.image,published:true}});assert.equal(save.statusCode,201);
+const message=await request(contact,{method:'POST',body:{name:'Gallery visitor',email:'visitor@example.org',subject:'Artwork enquiry',message:'Please tell me more about this drawing.'}});assert.equal(message.statusCode,201);
+const privateMessages=await request(inbox,{headers});assert.equal(privateMessages.data[0].email,'visitor@example.org');
+}finally{global.fetch=original;delete process.env.SUPABASE_URL;delete process.env.SUPABASE_SERVICE_ROLE_KEY;}});
