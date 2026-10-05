@@ -29,3 +29,24 @@ for(const mode of ['gallery','index'])$('#'+mode+'-view').onclick=()=>{$('#galle
 $('#year').textContent=new Date().getFullYear();
 $('#contact-form').addEventListener('submit',async e=>{e.preventDefault();const form=e.target,button=form.querySelector('button'),status=contactStatus;button.disabled=true;button.classList.add('is-busy');status.textContent='Sending your enquiry…';status.className='';try{const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});const result=await r.json();if(!r.ok)throw Error(result.error||'Your enquiry could not be sent. Please email Aggelos directly.');status.textContent='Thank you. Your enquiry has been received.';status.className='success';form.reset();}catch(err){status.textContent=err.message;status.className='error';}finally{button.disabled=false;button.classList.remove('is-busy');}});
 loadWorks();
+
+// Draw navigation symbols consistently, including systems without arrow glyphs.
+const arrowWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+const arrowNodes = [];
+while (arrowWalker.nextNode()) {
+ const node = arrowWalker.currentNode;
+ if (/[↗↓←→]/.test(node.textContent) && !node.parentElement.closest('script, style, textarea, option')) arrowNodes.push(node);
+}
+for (const node of arrowNodes) {
+ const fragment = document.createDocumentFragment();
+ for (const part of node.textContent.split(/([↗↓←→])/)) {
+  if (!/^[↗↓←→]$/.test(part)) { fragment.append(document.createTextNode(part)); continue; }
+  const icon = document.createElement('span');
+  icon.className = 'drawn-arrow';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.style.setProperty('--arrow-angle', ({'↗':'-45deg','↓':'90deg','←':'180deg','→':'0deg'})[part]);
+  icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h15M13 5l7 7-7 7"/></svg>';
+  fragment.append(icon);
+ }
+ node.replaceWith(fragment);
+}
