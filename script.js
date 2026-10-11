@@ -11,8 +11,8 @@ async function loadWorks(){
  try { const r=await fetch('/api/works'); if(!r.ok) throw Error(); works=await r.json(); }
  catch { setGalleryState('The gallery could not load. Please refresh, or view the complete portfolio below.', 'error'); return; }
  const featured=works.find(w=>w.id==='p6')||works[0];
- if(featured){const a=$('.opening-art a'),img=a.querySelector('img');a.href='#work='+encodeURIComponent(featured.id);a.setAttribute('aria-label','View '+featured.title);img.src=featured.image;img.alt=featured.alt||featured.title;$('.opening-art figcaption').replaceChildren(el('span',featured.title+', '+featured.year),el('span',featured.medium));}else $('.opening-art').hidden=true;
- gallery.replaceChildren(); gallery.removeAttribute('aria-busy'); $('#count').textContent=String(works.length).padStart(2,'0');
+ if(featured){const a=$('.opening-art a'),img=a.querySelector('img'),caption=$('.opening-art figcaption');a.href='#work='+encodeURIComponent(featured.id);a.setAttribute('aria-label','View '+featured.title);img.src=featured.image;img.alt=featured.alt||featured.title;if(caption)caption.replaceChildren(el('span',featured.title+', '+featured.year),el('span',featured.medium));}else $('.opening-art').hidden=true;
+ gallery.replaceChildren(); gallery.removeAttribute('aria-busy');
  works.forEach((w,i)=>{const f=el('article',null,'artwork'), a=el('a'), img=el('img');f.style.setProperty('--index',i);a.href='#work='+encodeURIComponent(w.id);img.src=w.image;img.alt=w.alt||w.title;img.loading='lazy';img.decoding='async';img.addEventListener('error',()=>{f.classList.add('image-error');img.alt='Artwork image unavailable';});img.addEventListener('load',()=>f.classList.add('is-loaded'),{once:true});const cap=el('div',null,'art-caption'),n=el('span',String(i+1).padStart(2,'0'),'art-number'), info=el('div');info.append(el('h3',w.title),el('p',`${w.year} · ${w.medium}`));cap.append(n,info);a.append(img,cap);a.addEventListener('click',()=>opener=a);f.append(a);gallery.append(f);});
  if(!works.length) setGalleryState('New work will be shared here soon.', 'empty');
  syncHash();
